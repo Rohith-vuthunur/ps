@@ -16,7 +16,7 @@ export default function Lfs() {
 
     const posting = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/event/lfs", {
+            const response = await fetch("https://ps-47lx.onrender.com/api/event/lfs", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
