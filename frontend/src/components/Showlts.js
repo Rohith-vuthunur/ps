@@ -9,7 +9,7 @@ export default function OrganizationCard() {
         const fetchEvents = async () => {
             try {
                 setLoading(true);
-                const response = await fetch("http://localhost:2000/api/event/lts", {
+                const response = await fetch("https://ps-47lx.onrender.com/api/event/lts", {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
