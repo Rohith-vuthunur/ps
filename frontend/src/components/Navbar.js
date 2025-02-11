@@ -24,6 +24,9 @@ export default function Navbar() {
                             <li className="nav-item">
                                 <Link className="nav-link text-white" to="/lts">Look to Sponsor</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link text-white" to="/Showlts">Show Sponsers</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>

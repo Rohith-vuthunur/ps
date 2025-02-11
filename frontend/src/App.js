@@ -7,6 +7,7 @@ import Lfs from './components/Lfs'
 import LS from './components/LS'
 import Login from './components/Login'
 import Signup from './components/Signup'
+import Showlts from './components/Showlts'
 export default function App() {
   return (
     <>
@@ -19,8 +20,10 @@ export default function App() {
         <Route path="/ls" element={<LS />} />  
         <Route path="/login" element={<Login/>} />  
         <Route path="/signup" element={<Signup/>} />  
+        <Route path="/Showlts" element={<Showlts/>} />  
       </Routes>
     </Router>
+    
     </>
   )
 }
