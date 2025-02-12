@@ -10,6 +10,7 @@ export default function Lts() {
     const [price, setPrice] = useState('');
     const [requirements, setRequirements] = useState('');
     const [event, setEvent] = useState('');
+    const [imgurl, setimgurl] = useState('');
     const [successAlert, setSuccessAlert] = useState(false);
     const [errorAlert, setErrorAlert] = useState('');
     const navigate = useNavigate();
@@ -29,7 +30,8 @@ export default function Lts() {
                     phone,
                     price: Number(price),
                     requirements,
-                    event
+                    event,
+                    imgurl
                 }),
             });
 
@@ -112,6 +114,10 @@ export default function Lts() {
                     <div className="form-floating mb-3">
                         <input type="text" className="form-control" placeholder="Event" value={event} onChange={(e) => setEvent(e.target.value)} />
                         <label>Event</label>
+                    </div>
+                    <div className="form-floating mb-3">
+                        <input type="text" className="form-control" placeholder="Event" value={imgurl} onChange={(e) => setimgurl(e.target.value)} />
+                        <label>Image URL</label>
                     </div>
                     <button type="submit" className="btn btn-primary w-100">Submit</button>
                 </form>

@@ -45,6 +45,10 @@ const ltsschema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true
+    },
+    imgurl:{
+        type:String,
+        required:true
     }
 });
 

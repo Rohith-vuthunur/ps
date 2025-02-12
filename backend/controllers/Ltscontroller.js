@@ -53,9 +53,10 @@ const Lts = require('../models/Lts.js');
 // Function to create a new organization
 const createOrganization = async (req, res) => {
     try {
-        const { orgname, industry, email, description, phone, price, requirements, event } = req.body;
+        console.log(req.body)
+        const { orgname, industry, email, description, phone, price, requirements, event,imgurl } = req.body;
 
-        if (!orgname || !industry || !email || !description || !phone || !price || !requirements || !event) {
+        if (!orgname || !industry || !email || !description || !phone || !price || !requirements || !event||!imgurl) {
             return res.status(400).json({ error: "All fields are required" });
         }
 
@@ -84,7 +85,8 @@ const createOrganization = async (req, res) => {
             phone,
             price,
             requirements,
-            event
+            event,
+            imgurl,
         });
 
         await newOrg.save();

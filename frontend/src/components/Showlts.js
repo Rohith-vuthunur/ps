@@ -14,7 +14,6 @@ export default function OrganizationCard() {
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    
                 });
 
                 if (!response.ok) {
@@ -26,10 +25,10 @@ export default function OrganizationCard() {
                 const data = await response.json();
                 console.log('Received data:', data);
                 
-                // Chec  k the structure of your data and set it accordingly
-                if (data && data.length > 0) {
+                // Ensure correct data structure
+                if (data && Array.isArray(data)) {
                     setEvents(data);
-                } else if (data && data.data && data.data.length > 0) {
+                } else if (data && data.data && Array.isArray(data.data)) {
                     setEvents(data.data);
                 } else {
                     setEvents([]);
@@ -44,9 +43,6 @@ export default function OrganizationCard() {
 
         fetchEvents();
     }, []);
-
-    // Check if the API endpoint is accessible
-    // console.log('API URL:', "https://ps-47lx.onrender.com/api/event/lts");
 
     return (
         <div className="container">
@@ -69,19 +65,27 @@ export default function OrganizationCard() {
             ) : (
                 events.map((event) => (
                     <div key={event._id} className="card p-4 my-3 shadow-sm">
-                        <div className="row">
-                            <div className="col-md-3">
-                                <div className="border p-3 text-center h-100">
-                                    <h5>{event.orgname || 'No Name Available'}</h5>
-                                </div>
+                        <div className="row align-items-center">
+                            {/* Organization Image & Name */}
+                            <div className="col-md-3 text-center">
+                                <img 
+                                    src={`${event.imgurl}`} 
+                                    alt={event.orgname} 
+                                    className="img-fluid rounded-circle mb-2"
+                                    style={{ width: "100px", height: "100px", objectFit: "cover", border: "3px solid #ddd" }}
+                                />
+                                <h5>{event.orgname || 'No Name Available'}</h5>
                             </div>
+
+                            {/* Organization Description */}
                             <div className="col-md-6">
-                                {/* <h2 className="text-center mb-4">{event.organizationName || 'No Name Available'}</h2> */}
-                                    <h4 className="text-center mb-4">Organization Description</h4>
+                                <h4 className="text-center mb-4">Organization Description</h4>
                                 <div className="border p-3 h-100">
                                     <p>{event.description || 'No description available'}</p>
                                 </div>
                             </div>
+
+                            {/* Sponsor Section */}
                             <div className="col-md-3">
                                 <div className="border p-3 h-100">
                                     <h5>Looking to Sponsor</h5>
