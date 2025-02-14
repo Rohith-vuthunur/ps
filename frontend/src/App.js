@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Showlfs from './components/Showlfs'
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
@@ -105,6 +106,8 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/Showlts" element={<Showlts />} />
+          <Route path="/Showlfs" element={<Showlfs />} />
+
         </Routes>
       </div>
 
@@ -125,3 +128,17 @@ export default function App() {
     </Router>
   );
 }
+
+
+
+
+
+// import React from 'react'
+// import Showlfs from './components/Showlfs'
+// export default function App() {
+//   return (
+//     <div>
+//       <Showlfs></Showlfs>
+//     </div>
+//   )
+// }

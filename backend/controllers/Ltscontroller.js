@@ -98,7 +98,6 @@ const createOrganization = async (req, res) => {
     }
 };
 
-// ✅ New function to get all organizations
 const getOrganizations = async (req, res) => {
     try {
         const organizations = await Lts.find(); // Fetch all organizations

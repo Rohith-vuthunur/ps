@@ -281,6 +281,7 @@ export default function Navbar({ onSearch, onNext }) {
                         <li className="nav-item"><Link className="nav-link text-white" to="/lfs" onClick={closeNavbar}>Look For Sponsors</Link></li>
                         <li className="nav-item"><Link className="nav-link text-white" to="/lts" onClick={closeNavbar}>Look to Sponsor</Link></li>
                         <li className="nav-item"><Link className="nav-link text-white" to="/Showlts" onClick={closeNavbar}>Show Sponsors</Link></li>
+                        <li className="nav-item"><Link className="nav-link text-white" to="/Showlfs" onClick={closeNavbar}>Show Organizations</Link></li>
                     </ul>
                     <form className="d-flex ms-auto" onSubmit={handleSearch}>
                         <input 
