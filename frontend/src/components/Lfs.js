@@ -67,7 +67,7 @@ export default function Lfs() {
     };
 
     return (
-        <div className="container my-5">
+        <div className="container my-5 p-5">
             <div className="card shadow-lg p-4">
                 <h3 className="card-title text-center mb-4">Create Event</h3>
                 {successAlert && (

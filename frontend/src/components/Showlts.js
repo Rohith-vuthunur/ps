@@ -45,7 +45,7 @@ export default function OrganizationCard() {
     }, []);
 
     return (
-        <div className="container">
+        <div className="container pt-5">
             {loading ? (
                 <div className="text-center p-5">
                     <div className="spinner-border text-primary" role="status">
